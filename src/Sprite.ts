@@ -8,7 +8,7 @@ export class Sprite {
   private scale: number;
   private slowDownAnimation: number;
   private elapsedFrames: number;
-  protected currentFrame: number;
+  public currentFrame: number;
   readonly imageOffset: Offset;
 
   constructor(data: Sprites) {
@@ -23,7 +23,7 @@ export class Sprite {
     this.imageOffset = data.offset ? data.offset : { x: 0, y: 0 };
   }
 
-  protected draw() {
+  protected draw(): void {
     canvas.drawImage(
       this.image,
       this.currentFrame * (this.image.width / this.numOfFrames), // gets the correct width for one frame of the png
@@ -37,7 +37,7 @@ export class Sprite {
     );
   }
 
-  protected animateFrames() {
+  protected animateFrames(): void {
     this.elapsedFrames++;
     if (this.elapsedFrames % this.slowDownAnimation === 0) {
       if (this.currentFrame < this.numOfFrames - 1) this.currentFrame++;
@@ -45,7 +45,7 @@ export class Sprite {
     }
   }
 
-  update() {
+  update(): void {
     this.draw();
     this.animateFrames();
   }

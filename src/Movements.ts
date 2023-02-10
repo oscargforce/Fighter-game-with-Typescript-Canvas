@@ -41,8 +41,7 @@ export class Movements {
    * this.position.y + this.image.height gives the bottom location of the rectangle []
    *                                                                              ->
    * if rectangle bottom >= canvasHeight then you hit the bottom of the canvas image.
-   * If you want to land not on the bottom of the page but perhaps on the middle of the image, config.canvasHeight - 200
-   * sets the position where it stops falling
+   * If you want to the fighters to land in the middle of the canvas then you have to subtract x amount, example: config.canvasHeight - 200
    *
    */
   private falling(): void {
@@ -67,7 +66,7 @@ export class Movements {
     this.velocity.y = -config.jumpSpeed;
   }
 
-  update() {
+  update(): void {
     this.falling();
     if (this.keys.d.pressed && this.lastKey === "d") {
       this.runToTheRight();
@@ -87,7 +86,7 @@ export class Movements {
     else if (this.velocity.y > 0) this.fighter.switchSprite("fall");
   }
 
-  movePlayer(event: KeyboardEvent) {
+  movePlayer(event: KeyboardEvent): void {
     switch (event.key) {
       case "d":
         this.keys.d.pressed = true;
@@ -103,7 +102,7 @@ export class Movements {
     }
   }
 
-  stopMovingPlayer(event: KeyboardEvent) {
+  stopMovingPlayer(event: KeyboardEvent): void {
     switch (event.key) {
       case "d":
         this.keys.d.pressed = false;
@@ -116,7 +115,7 @@ export class Movements {
     }
   }
 
-  moveEnemy(event: KeyboardEvent) {
+  moveEnemy(event: KeyboardEvent): void {
     switch (event.key) {
       case "ArrowRight":
         this.keys.arrowRight.pressed = true;
@@ -132,7 +131,7 @@ export class Movements {
     }
   }
 
-  stopMovingEnemy(event: KeyboardEvent) {
+  stopMovingEnemy(event: KeyboardEvent): void {
     switch (event.key) {
       case "ArrowRight":
         this.keys.arrowRight.pressed = false;

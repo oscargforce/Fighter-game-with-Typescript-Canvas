@@ -1,12 +1,16 @@
 import { config } from "./config.js";
 import { Fighter } from "./Fighter.js";
 import { Game } from "./Game.js";
-import { isInsideHitBox } from "./hitbox-utils.js";
+import { isInsideHitBox, playerMisses } from "./hitbox-utils.js";
 import { Sprite } from "./Sprite.js";
 
-const canvasElement = document.getElementById("gameWindow") as HTMLCanvasElement;
+const canvasElement = document.getElementById(
+  "gameWindow"
+) as HTMLCanvasElement;
 
-export const canvas = canvasElement.getContext("2d") as CanvasRenderingContext2D;
+export const canvas = canvasElement.getContext(
+  "2d"
+) as CanvasRenderingContext2D;
 
 canvasElement.width = config.canvasWidth;
 canvasElement.height = config.canvasHeight;
@@ -87,6 +91,9 @@ function animate() {
     )!.style.width = `${(wizard.health -= config.warriorDmg)}%`;
   }
 
+  if (playerMisses(warrior, 6)) warrior.isAttacking = false;
+  if (playerMisses(wizard, 7)) wizard.isAttacking = false;
+  
   if (warrior.isDead() || wizard.isDead()) {
     game.determineTheWinner();
   }

@@ -15,32 +15,32 @@ export class Game {
     this.warrior = warrior;
   }
 
-  decreaseGameTime() {
+  decreaseGameTime(): void {
     if (config.gameTimeInSeconds >= 0) {
       setTimeout(this.decreaseGameTime.bind(this), 1000);
       this.timerElement.textContent = `${config.gameTimeInSeconds--}`;
     } else if (config.gameTimeInSeconds <= 0) this.determineTheWinner();
   }
 
-  private gameOver() {
+  private gameOver(): void {
     this.timerElement.textContent = `Game Over`;
   }
-  private fantasyWarriorWon() {
+  private fantasyWarriorWon(): void {
     this.gameResultElement.textContent = `Fantasy warrior won!`;
     this.gameResultElement.style.display = "flex";
   }
 
-  private wizardWon() {
+  private wizardWon(): void {
     this.gameResultElement.textContent = `The evil wizard won!`;
     this.gameResultElement.style.display = "flex";
   }
 
-  private tiedGame() {
+  private tiedGame(): void {
     this.gameResultElement.textContent = `Its a tie!`;
     this.gameResultElement.style.display = "flex";
   }
 
-  determineTheWinner() {
+  determineTheWinner(): void {
     this.gameOver();
     if (this.wizard.health === this.warrior.health) this.tiedGame();
     else if (this.wizard.health < this.warrior.health) this.fantasyWarriorWon();

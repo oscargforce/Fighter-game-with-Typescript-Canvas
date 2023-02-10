@@ -43,7 +43,7 @@ export class Fighter extends Sprite {
     return this.health <= 0;
   }
 
-  update() {
+  update(): void {
     this.draw();
     this.movements.update();
     if (!this.dead) this.animateFrames();
@@ -52,12 +52,12 @@ export class Fighter extends Sprite {
     this.attackBox.position.y = this.position.y + this.attackBox.offset.y;
   }
 
-  attack() {
+  attack(): void {
     this.isAttacking = true;
     this.switchSprite("attack");
   }
 
-  switchSprite(sprite: ImageNames) {
+  switchSprite(sprite: ImageNames): void {
     // If player is dead, then dont switch to new sprite.
     if (this.image === this.sprites.death.image) {
       if (this.currentFrame === this.sprites.death.numOfFrames - 1)
@@ -101,7 +101,7 @@ export class Fighter extends Sprite {
     }
   }
 
-  private setImage(img: ImageNames) {
+  private setImage(img: ImageNames): void {
     if (this.sprites?.[img] && this.image != this.sprites[img].image) {
       this.image = this.sprites[img].image as HTMLImageElement;
       this.numOfFrames = this.sprites[img].numOfFrames;

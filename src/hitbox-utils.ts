@@ -25,3 +25,7 @@ function isNotAboveEnemy(player: Fighter, enemy: Fighter): boolean {
     player.attackBox.position.y <= enemy.position.y + (config.playerHeight + enemy.image.height)
   );
 }
+
+export function playerMisses(player: Fighter, currentFrame: number): boolean {
+  return player.isAttacking && player.currentFrame === currentFrame;
+}
