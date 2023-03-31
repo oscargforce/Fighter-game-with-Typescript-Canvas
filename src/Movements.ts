@@ -44,7 +44,7 @@ export class Movements {
    * If you want to the fighters to land in the middle of the canvas then you have to subtract x amount, example: config.canvasHeight - 200
    *
    */
-  private falling(): void {
+   falling(): void {
     this.position.y += this.velocity.y;
     if (
       this.position.y + this.playerImageHeight + this.velocity.y >=

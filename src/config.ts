@@ -1,6 +1,6 @@
 export const config = {
   canvasWidth: 1750,
-  canvasHeight: 939,
+  canvasHeight: 900,
   gravity: 0.7,
   runSpeed: 5,
   jumpSpeed: 20,

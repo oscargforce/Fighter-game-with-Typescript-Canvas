@@ -40,7 +40,7 @@ export class Sprite {
   protected animateFrames(): void {
     this.elapsedFrames++;
     if (this.elapsedFrames % this.slowDownAnimation === 0) {
-      if (this.currentFrame < this.numOfFrames - 1) this.currentFrame++;
+      if (this.currentFrame < (this.numOfFrames - 1)) this.currentFrame++;
       else this.currentFrame = 0;
     }
   }

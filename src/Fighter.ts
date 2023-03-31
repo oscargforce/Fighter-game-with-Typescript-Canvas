@@ -50,6 +50,18 @@ export class Fighter extends Sprite {
 
     this.attackBox.position.x = this.position.x + this.attackBox.offset.x; // Set attackbox ontop of the rectangle and make attack box face eachother.
     this.attackBox.position.y = this.position.y + this.attackBox.offset.y;
+
+    // Unable the fighter to move through walls.
+    if (this.position.x <= 0) this.position.x = 0;
+
+    if (this.position.x + config.playerWidth >= config.canvasWidth)
+      this.position.x = config.canvasWidth - config.playerWidth;
+
+    if (this.position.y + config.playerHeight <= 0) {
+      this.position.y = 0 - config.playerHeight;
+      this.movements.falling();
+
+    }
   }
 
   attack(): void {
