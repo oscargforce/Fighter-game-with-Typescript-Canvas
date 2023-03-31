@@ -1,8 +1,8 @@
-import { config } from "./config.js";
-import { Fighter } from "./Fighter.js";
-import { Game } from "./Game.js";
-import { isInsideHitBox, playerMisses } from "./hitbox-utils.js";
-import { Sprite } from "./Sprite.js";
+import { config } from "./config";
+import { Fighter } from "./Fighter";
+import { Game } from "./Game";
+import { isInsideHitBox, playerMisses } from "./hitbox-utils";
+import { Sprite } from "./Sprite";
 
 const canvasElement = document.getElementById(
   "gameWindow"
@@ -34,7 +34,7 @@ const wizard = new Fighter({
     attack: { numOfFrames: 8, imgSrc: "images/Evil-Wizard/Attack.png" },
     run: { numOfFrames: 8, imgSrc: "images/Evil-Wizard/Move.png" },
     takeHit: { numOfFrames: 4, imgSrc: "images/Evil-Wizard/Take-Hit.png" },
-    death: { numOfFrames: 5, imgSrc: "Images/Evil-Wizard/Death.png" },
+    death: { numOfFrames: 5, imgSrc: "images/Evil-Wizard/Death.png" },
   },
   attackBox: { height: 50, width: 175, offset: { x: 20, y: 200 } },
 });

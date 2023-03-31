@@ -1,5 +1,5 @@
-import { config } from "./config.js";
-import { Fighter } from "./Fighter.js";
+import { config } from "./config";
+import { Fighter } from "./Fighter";
 
 export class Game {
   private timerElement: HTMLElement;

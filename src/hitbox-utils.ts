@@ -1,5 +1,5 @@
-import { Fighter } from "./Fighter.js";
-import { config } from "./config.js";
+import { Fighter } from "./Fighter";
+import { config } from "./config";
 
 export function isInsideHitBox(player: Fighter, enemy: Fighter): boolean {
   return (

@@ -1,5 +1,5 @@
-import { canvas } from "./index.js";
-import { Offset, Position, Sprites } from "./Sprites.types.js";
+import { canvas } from "./index";
+import { Offset, Position, Sprites } from "./Sprites.types";
 
 export class Sprite {
   public image: HTMLImageElement;

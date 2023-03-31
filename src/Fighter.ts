@@ -1,13 +1,13 @@
-import { config } from "./config.js";
-import { Movements } from "./Movements.js";
-import { Sprite } from "./Sprite.js";
+import { config } from "./config";
+import { Movements } from "./Movements";
+import { Sprite } from "./Sprite";
 import {
   Fighters,
   SpriteImages,
   ImageNames,
   Velocity,
   AttackBox,
-} from "./Sprites.types.js";
+} from "./Sprites.types";
 
 export class Fighter extends Sprite {
   readonly velocity: Velocity;

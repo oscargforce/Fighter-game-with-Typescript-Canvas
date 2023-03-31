@@ -1,5 +1,5 @@
 import { Position, Velocity } from "./Sprites.types";
-import { config } from "./config.js";
+import { config } from "./config";
 import { Fighter } from "./Fighter";
 
 export class Movements {
